@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Numerical project</title>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://mauriciopoppe.github.io/function-plot/js/function-plot.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.5.0/math.js"
+      integrity="sha512-PRRHSwgn8QJinp43y5B698YK/FApqSvwmd7kVu8NWMksCl/3daKnNbPNWPuGKDrpIIb+0Dg5W55VSbZi0QG60Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <!-- finding the root solver -->
+
+    <div id="select-the-solver" class="container">
+      <h2>Select the solver:</h2>
+      <button
+        id="finding-the-root-solver-button"
+        class="clickme"
+        onclick="display_root_solver()"
+      >
+        Finding the root methods
+      </button>
+      <button
+        id="linear-equations-solver-button"
+        class="clickme"
+        onclick="display_system_of_linear_solver()"
+      >
+        System of linear equations solver
+      </button>
+      <script src="scripts/main-script.js"></script>
+    </div>
+
+    <div class="container" id="finding-root-solver">
+      <h1 style="text-align: center">Finding the root solver</h1>
+      <!-- taking the function input -->
+      <div id="function-field" class="system-size-field">
+        <div>
+          <label>Enter the function: </label>
+          <textarea id="function-area" cols="30" rows="3"></textarea>
+        </div>
+        <div>
+          <label>Precision: </label>
+          <input id="precision-input" />
+        </div>
+        <div>
+          <label>Tolerance: </label>
+          <input id="tolerance-input" />
+        </div>
+        <button id="submit-function" class="clickme">Submit</button>
+      </div>
+      <!-- end taking the function input -->
+      <section class="plot">
+        <div class="myFunction" id="myFunction"></div>
+      </section>
+
+      <div id="select-method">
+        <hr style="margin-top: 30px; margin-bottom: 30px" />
+        <h4>Select the solving method, please:</h4>
+        <ul>
+          <li>
+            <button class="clickme" onclick="bisection()">Bisection</button>
+          </li>
+          <li>
+            <button class="clickme" onclick="false_position()">
+              False-Position
+            </button>
+          </li>
+          <li>
+            <button class="clickme" onclick="fixed_point()">Fixed point</button>
+          </li>
+          <li>
+            <button class="clickme" onclick="newton()">Newton-Raphson</button>
+          </li>
+          <li>
+            <button class="clickme" onclick="secant_method()">
+              Secant Method
+            </button>
+          </li>
+        </ul>
+        <hr style="margin-top: 30px; margin-bottom: 30px" />
+      </div>
+
+      <h2 style="text-align: center" id="method-name-header"></h2>
+      <div id="solve" class="solving-field">
+        <div>
+          <div id="final-answer"></div>
+
+          <section class="plot" id = "specific-plot">
+            <div class="myFunction" id="specific-method-plot"></div>
+          </section>
+
+          <div id="result" class="result-field"></div>
+        </div>
+        <div id="steps-taken-parent" class="steps-taken-field">
+          <div class="scroll-bar">
+            <div id="steps-taken" class="steps"></div>
+          </div>
+        </div>
+      </div>
+
+      <script src="scripts/phase2-scripts/main-script-phase-two.js"></script>
+      <script src="scripts/phase2-scripts/bisection.js"></script>
+      <script src="scripts/phase2-scripts/falsePosition method-1.js"></script>
+      <script src="scripts/phase2-scripts/newtonRaphson.js"></script>
+      <script src="scripts/phase2-scripts/secant.js"></script>
+      <script src="scripts/phase2-scripts/FixedPoint.js"></script>
+    </div>
+    <!-- end of finding the root solver -->
+
+    <!-- the system of linear equations solver -->
+    <div class="container" id="linear-equations-solver">
+      <h1 style="text-align: center">
+        online system of linear equations solver
+      </h1>
+      <!-- taking the size input -->
+      <div class="system-size-field" style="margin-bottom: 30px">
+        <div>
+          <label>Enter the number of equations:</label><br />
+          <input type="text" id="number-of-equations" />
+        </div>
+        <div>
+          <label>Enter the precision:</label><br />
+          <input type="text" id="precision" />
+        </div>
+        <button id="submit-system-size" class="clickme">Submit</button>
+      </div>
+      <!-- end taking the size input -->
+
+      <!-- taking the equations -->
+      <div id="equations-field">
+        <div id="input-equations-field"></div>
+        <button class="clickme" id="submit-cooficients">Submit</button>
+        <hr id="seperator" />
+      </div>
+      <!-- end taking the equations -->
+
+      <!-- defining the method -->
+      <div id="choose-method">
+        <h4>Select the solving method, please:</h4>
+        <ul>
+          <li>
+            <button class="clickme" onclick="G_E()">Gauess elimination</button>
+          </li>
+          <li>
+            <button class="clickme" onclick="G_J()">Gauess Jordan</button>
+          </li>
+          <li>
+            <button class="clickme" onclick="LU()">LU Decomposition</button>
+          </li>
+          <li><button class="clickme" onclick="G_S()">Gauss seidel</button></li>
+          <li>
+            <button class="clickme" onclick="J_I()">Jacobi Iteration</button>
+          </li>
+        </ul>
+        <hr style="margin-top: 30px; margin-bottom: 30px" />
+      </div>
+      <!-- end defining the method -->
+
+      <h2 style="text-align: center" id="method-name-heading"></h2>
+
+      <!-- solution field -->
+      <div id="solving-field" class="solving-field">
+        <div>
+          <div id="final-answer-field"></div>
+          <div id="result-field" class="result-field"></div>
+        </div>
+        <div id="steps-taken-field" class="steps-taken-field">
+          <div id="scroll-bar" class="croll-bar">
+            <div id="steps" class="steps"></div>
+          </div>
+        </div>
+      </div>
+      <!-- end of solution field -->
+      <script src="scripts/phase1-scripts/gaussgaussJordan.js"></script>
+      <script src="scripts/phase1-scripts/main-script-phase-one.js"></script>
+      <script src="scripts/phase1-scripts/IterativeMethods-1-1.js"></script>
+      <script src="scripts/phase1-scripts/Dolittle.js"></script>
+      <script src="scripts/phase1-scripts/Crout.js"></script>
+      <script src="scripts/phase1-scripts/cheloseky.js"></script>
+    </div>
+    <!-- end of the system of linear equations solver -->
+  </body>
+</html>

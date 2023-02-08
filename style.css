@@ -1,0 +1,264 @@
+/* start global  rules  */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    /* background-color: rgba(0, 255, 255,0.1); */
+    /* width: 100vw; */
+    background-image: url('./pic.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+#finding-root-solver {
+    display: none;
+}
+
+.parent {
+    background-color: #eee;
+
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Mobile */
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+
+/* Medium Screens */
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large Screens */
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* end global rules  */
+
+
+
+textarea {
+    font-size: 1.5em;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+.plot {
+    width: 550px;
+    margin-top: 50px;
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    /* margin: auto; */
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+
+
+#linear-equations-solver {
+    display: none;
+}
+
+
+#choose-method,
+#select-method {
+    display: none;
+}
+
+#choose-method ul,
+#select-method ul {
+    list-style: none;
+    /* display: none; */
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    flex-wrap: wrap;
+    /* align-items: center; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.system-size-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.system-size-field div {
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 30px; */
+}
+
+label {
+    font-weight: 600;
+    /* margin-bottom: 20px; */
+    margin-right: 10px;
+}
+
+#cooficients-matrix-field label {
+    display: block;
+}
+
+#cooficients-matrix-field {
+    display: none;
+    margin-top: 50px;
+}
+
+#input-equations-field input {
+    width: 80px;
+    /* margin-right: 20px; */
+    margin-bottom: 20px;
+}
+
+#equations-field button {
+    display: none;
+}
+
+#seperator {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+
+.choose-method {
+    display: none;
+}
+
+.choose-method ul {
+    list-style: none;
+    /* display: none; */
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    flex-wrap: wrap;
+    /* align-items: center; */
+}
+
+form {
+    margin-left: 20px;
+}
+
+select {
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.clickme {
+    font-weight: bold;
+    border-style: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #238636;
+    color: white;
+    transition: 0.25s ease-in-out;
+}
+
+.clickme:focus {
+    background-color: red;
+}
+
+.clickme:hover {
+    background-color: #54ad66;
+    cursor: pointer;
+}
+
+input {
+    padding: 3px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.25em;
+    width: 80px;
+    background-color: white;
+}
+
+.steps-taken-field {
+    margin-top: 50px;
+    background-color: rgb(3, 3, 46);
+    border: 2px solid white;
+    width: fit-content;
+    padding: 30px;
+    border-radius: 25px;
+}
+
+.steps {
+    color: white;
+    /* display: none; */
+}
+
+.steps-taken-field {
+    display: none;
+}
+
+.steps div {
+    margin-bottom: 5px;
+}
+
+.scroll-bar {
+    width: 400px;
+    height: 300px;
+    background-color: rgb(3, 3, 46);
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.solving-field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.result-field span {
+    font-weight: bold;
+    color: #2fca4e;
+    font-size: 1.5em;
+}
+
+
+#select-the-solver {
+    margin-top: 20px;
+    width: 70vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
