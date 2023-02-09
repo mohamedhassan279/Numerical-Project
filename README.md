@@ -14,6 +14,6 @@
 ---
 ## How to run:
 ---
-## How the system works
+## How the system works:
 ---
-## Snapshots of our UI and a user guide
+## Snapshots of our UI and a user guide:
